@@ -26,7 +26,7 @@ export const fleet: CarType[] = [
         description:
             'Comfortable and fuel-efficient sedan, perfect for intercity travel. Ideal for solo travellers, couples, and small families.',
         features: ['AC', '4 Seater', 'Fuel Efficient', 'Spacious Boot'],
-        image: '/cars/swiftdesire.webp',
+        image: '/cars/swiftdesire.jpg',
         popular: true,
     },
     {

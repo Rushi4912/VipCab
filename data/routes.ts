@@ -12,6 +12,7 @@ export interface RouteData {
     isAirport: boolean;
     isOneWay: boolean;
     fareNote?: string;
+    image?: string;
     relatedRoutes: string[];
     category: 'pune-mumbai' | 'airport' | 'pilgrimage' | 'outstation' | 'intercity';
 }
@@ -66,6 +67,7 @@ function createRoute(
         isAirport,
         isOneWay,
         fareNote: overrides.fareNote,
+        image: overrides.image,
         relatedRoutes,
         category,
     };
@@ -81,6 +83,7 @@ export const routes: RouteData[] = [
         distance: '150 km',
         duration: '2.5–3.5 hours',
         category: 'pune-mumbai',
+        image: '/routes/punetomumbai.jpg',
         intro:
             'Travel from Pune to Mumbai in comfort with VIP Cab. The Pune to Mumbai Expressway connects the two cities in under 3 hours. Our professional drivers ensure a safe, smooth, and on-time journey. Available 24/7 for one-way drops, round trips, and airport transfers.',
         relatedRoutes: [
@@ -95,6 +98,7 @@ export const routes: RouteData[] = [
         distance: '150 km',
         duration: '2.5–3.5 hours',
         category: 'pune-mumbai',
+        image: '/routes/mumbaitopune.jpg',
         intro:
             'Book a reliable Mumbai to Pune cab with VIP Cab. Whether you are heading from Mumbai suburbs, South Mumbai, or the airport, we pick you up from your doorstep and drop you anywhere in Pune — Hinjewadi, Kothrud, Baner, Wakad, Aundh, and more.',
         relatedRoutes: [
@@ -112,6 +116,7 @@ export const routes: RouteData[] = [
         duration: '3–3.5 hours',
         category: 'airport',
         isAirport: true,
+        image: '/routes/punetomumbaiairport.jpg',
         intro:
             'Book a Pune to Mumbai Airport cab for your flight. Our drivers monitor flight schedules and ensure you reach the terminal well in time. Available for both domestic (T1) and international (T2) terminals at Chhatrapati Shivaji Maharaj International Airport.',
         relatedRoutes: [
@@ -126,6 +131,7 @@ export const routes: RouteData[] = [
         duration: '3–3.5 hours',
         category: 'airport',
         isAirport: true,
+        image: '/routes/mumbaitopuneairport.jpg',
         intro:
             'Arriving at Mumbai Airport? Book your Mumbai Airport to Pune cab in advance. Our driver will meet you at the arrival gate, help with luggage, and drive you comfortably to any location in Pune. We track your flight status for timely pickup.',
         relatedRoutes: [
@@ -140,6 +146,7 @@ export const routes: RouteData[] = [
         duration: '2–2.5 hours',
         category: 'airport',
         isAirport: true,
+        image: '/routes/navimumbaiairporttopune.jpg',
         intro:
             'Book a cab from the new Navi Mumbai International Airport (NMIA) to Pune. With our reliable service, your driver will be waiting as you land. The route via the expressway takes just 2–2.5 hours to reach Pune.',
         relatedRoutes: [
@@ -235,10 +242,10 @@ export const routes: RouteData[] = [
 
     // ---- Pune outstation routes ----
     createRoute('Pune', 'Lonavala', { distance: '65 km', duration: '1–1.5 hours', category: 'outstation', relatedRoutes: ['pune-to-mumbai-cab', 'pune-to-matheran-cab', 'pune-to-mahabaleshwar-cab'] }),
-    createRoute('Pune', 'Nashik', { distance: '210 km', duration: '4–5 hours', category: 'outstation', relatedRoutes: ['pune-to-shirdi-cab', 'pune-to-mumbai-cab'] }),
-    createRoute('Pune', 'Shirdi', { distance: '190 km', duration: '4–5 hours', category: 'pilgrimage', relatedRoutes: ['pune-to-nashik-cab', 'pune-to-pandharpur-cab', 'pune-to-ashtavinayak-cab'] }),
+    createRoute('Pune', 'Nashik', { distance: '210 km', duration: '4–5 hours', category: 'outstation', image: '/routes/punetonashik.jpg', relatedRoutes: ['pune-to-shirdi-cab', 'pune-to-mumbai-cab'] }),
+    createRoute('Pune', 'Shirdi', { distance: '190 km', duration: '4–5 hours', category: 'pilgrimage', image: '/routes/punetoshirdi.jpg', relatedRoutes: ['pune-to-nashik-cab', 'pune-to-pandharpur-cab', 'pune-to-ashtavinayak-cab'] }),
     createRoute('Pune', 'Kolhapur', { distance: '250 km', duration: '4.5–5 hours', category: 'outstation', relatedRoutes: ['pune-to-sangli-cab', 'pune-to-goa-cab'] }),
-    createRoute('Pune', 'Goa', { distance: '450 km', duration: '8–9 hours', category: 'outstation', relatedRoutes: ['pune-to-kolhapur-cab', 'pune-to-ratnagiri-cab'] }),
+    createRoute('Pune', 'Goa', { distance: '450 km', duration: '8–9 hours', category: 'outstation', image: '/routes/punetogoa.jpg', relatedRoutes: ['pune-to-kolhapur-cab', 'pune-to-ratnagiri-cab'] }),
     createRoute('Pune', 'Bhimashankar', { distance: '110 km', duration: '2.5–3 hours', category: 'pilgrimage', relatedRoutes: ['pune-to-shirdi-cab', 'pune-to-5-jyotirling-cab'] }),
     createRoute('Pune', 'Alibag', { distance: '145 km', duration: '3–3.5 hours', category: 'outstation', relatedRoutes: ['pune-to-mumbai-cab', 'pune-to-lonavala-cab'] }),
     createRoute('Pune', 'Mahabaleshwar', { distance: '120 km', duration: '2.5–3 hours', category: 'outstation', relatedRoutes: ['pune-to-satara-cab', 'pune-to-lonavala-cab'] }),

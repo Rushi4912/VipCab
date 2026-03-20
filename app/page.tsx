@@ -10,7 +10,7 @@ import SectionHeading from '@/components/SectionHeading';
 import RouteCard from '@/components/RouteCard';
 import FleetCard from '@/components/FleetCard';
 import ServiceCard from '@/components/ServiceCard';
-import PricingCard from '@/components/PricingCard';
+
 import TestimonialCard from '@/components/TestimonialCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTABanner from '@/components/CTABanner';
@@ -93,7 +93,7 @@ export default function Home() {
             title="Popular Routes"
             subtitle="Most booked cab routes by our customers. Reliable service, every day."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {popularRoutes.map((route) => (
               <RouteCard key={route.slug} route={route} />
             ))}
@@ -151,48 +151,16 @@ export default function Home() {
       </section>
 
       {/* ========== WHY CHOOSE US ========== */}
-      <section className="dark-gradient py-16 px-4" id="why-us">
+      <section className="py-16 px-4 bg-gradient-to-b from-[#f0f9ff] to-white" id="why-us">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             title="Why Choose VIP Cab?"
             subtitle="We deliver premium cab experiences at honest prices."
-            light
           />
-          <WhyChooseUs light />
+          <WhyChooseUs />
         </div>
       </section>
 
-      {/* ========== PRICING / TARIFF ========== */}
-      <section className="py-16 px-4" id="pricing">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading
-            title="Transparent Pricing"
-            subtitle="Simple per-kilometer fares. No hidden charges, no surprises."
-          />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
-            {fleet.map((car) => (
-              <PricingCard key={car.id} car={car} />
-            ))}
-          </div>
-          <div className="mt-8 rounded-xl bg-surface-alt border border-border p-5">
-            <h3 className="text-sm font-semibold text-primary mb-2">
-              Additional Charges
-            </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-sm text-text-light">
-              <li className="flex items-center gap-2"><span className="text-accent">•</span> Toll charges extra</li>
-              <li className="flex items-center gap-2"><span className="text-accent">•</span> Parking charges extra</li>
-              <li className="flex items-center gap-2"><span className="text-accent">•</span> Driver food allowance extra</li>
-              <li className="flex items-center gap-2"><span className="text-accent">•</span> Night charges (10 PM – 6 AM)</li>
-              <li className="flex items-center gap-2"><span className="text-accent">•</span> GST as applicable</li>
-            </ul>
-          </div>
-          <div className="mt-6 text-center">
-            <Link href="/tariff" className="text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
-              View Detailed Tariff →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ========== TESTIMONIALS ========== */}
       <section className="py-16 px-4 bg-surface-alt" id="testimonials">

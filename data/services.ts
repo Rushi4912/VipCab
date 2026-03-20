@@ -4,6 +4,7 @@ export interface ServiceType {
     name: string;
     shortName: string;
     icon: string;
+    image?: string;
     description: string;
     longDescription: string;
     features: string[];
@@ -15,6 +16,7 @@ export const services: ServiceType[] = [
     {
         id: 'one-way',
         slug: 'one-way-cab',
+        image: '/services/oneway.jpg',
         name: 'One Way Cab Service',
         shortName: 'One Way Cab',
         icon: '➡️',
@@ -37,6 +39,7 @@ export const services: ServiceType[] = [
     {
         id: 'round-trip',
         slug: 'round-trip-cab',
+        image: '/services/roundtrip.jpg',
         name: 'Round Trip Cab Service',
         shortName: 'Round Trip',
         icon: '🔄',
@@ -59,6 +62,7 @@ export const services: ServiceType[] = [
     {
         id: 'airport-transfer',
         slug: 'airport-transfer',
+        image: '/services/AirportTransfers.jpg',
         name: 'Airport Transfer Service',
         shortName: 'Airport Transfer',
         icon: '✈️',
@@ -82,6 +86,7 @@ export const services: ServiceType[] = [
     {
         id: 'outstation',
         slug: 'outstation-cab',
+        image: '/services/outstation.jpg',
         name: 'Outstation Cab Service',
         shortName: 'Outstation Cab',
         icon: '🏞️',
@@ -105,6 +110,7 @@ export const services: ServiceType[] = [
     {
         id: 'corporate',
         slug: 'corporate-cab',
+        image: '/services/businesstravel.jpg',
         name: 'Corporate Cab Service',
         shortName: 'Corporate Travel',
         icon: '💼',
