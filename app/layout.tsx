@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Premium Pune Mumbai Cab Service`,
+    default: `${siteConfig.name} | Premium Pune Mumbai Cab Service`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -56,6 +56,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
+  },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 };
 

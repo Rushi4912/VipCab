@@ -101,7 +101,7 @@ export default function Home() {
           <div className="mt-8 text-center">
             <Link
               href="/pune-to-mumbai-cab"
-              className="inline-flex items-center gap-1 rounded-full border border-accent text-accent px-6 py-2.5 text-sm font-semibold hover:bg-accent-dark hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 rounded-full border border-[#ff3366] text-[#ff3366] px-6 py-2.5 text-sm font-semibold hover:bg-[#ff3366] hover:text-white transition-colors"
             >
               View All Routes
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -127,7 +127,7 @@ export default function Home() {
           <div className="mt-8 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-dark transition-colors"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-[#ff3366] hover:text-[#e62e5c] transition-colors"
             >
               View All Services →
             </Link>
@@ -175,7 +175,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link href="/testimonials" className="text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
+            <Link href="/testimonials" className="text-sm font-semibold text-[#ff3366] hover:text-[#e62e5c] transition-colors">
               Read All Reviews →
             </Link>
           </div>
@@ -191,7 +191,7 @@ export default function Home() {
           />
           <FAQAccordion faqs={generalFaqs.slice(0, 6)} showSchema />
           <div className="mt-6 text-center">
-            <Link href="/faq" className="text-sm font-semibold text-accent hover:text-accent-dark transition-colors">
+            <Link href="/faq" className="text-sm font-semibold text-[#ff3366] hover:text-[#e62e5c] transition-colors">
               View All FAQs →
             </Link>
           </div>

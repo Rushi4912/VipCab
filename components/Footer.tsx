@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { siteConfig, getCallLink, getWhatsAppLink } from '@/data/site';
+import { routes } from '@/data/routes';
 
 const quickLinks = [
     { href: '/about', label: 'About Us' },
@@ -8,41 +9,32 @@ const quickLinks = [
     { href: '/services', label: 'Services' },
     { href: '/contact', label: 'Contact' },
     { href: '/faq', label: 'FAQs' },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/privacy-policy', label: 'Privacy Policy' },
-    { href: '/terms-and-conditions', label: 'Terms' },
-];
-
-const popularRoutes = [
-    { href: '/pune-to-mumbai-cab', label: 'Pune to Mumbai' },
-    { href: '/mumbai-to-pune-cab', label: 'Mumbai to Pune' },
-    { href: '/pune-to-mumbai-airport-cab', label: 'Pune to Mumbai Airport' },
-    { href: '/mumbai-airport-to-pune-cab', label: 'Mumbai Airport to Pune' },
-    { href: '/navi-mumbai-airport-to-pune-cab', label: 'Navi Mumbai Airport to Pune' },
-    { href: '/pune-to-goa-cab', label: 'Pune to Goa' },
-    { href: '/pune-to-shirdi-cab', label: 'Pune to Shirdi' },
-    { href: '/pune-to-nashik-cab', label: 'Pune to Nashik' },
 ];
 
 export default function Footer() {
     return (
-        <footer className="bg-primary text-white">
-            <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <footer className="bg-[#2D2D3F] text-white">
+            <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 lg:px-8">
+
+                {/* TOP ROW: Core Material (Brand, Quick Links, Working Hours, Contact) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-6">
                     {/* Brand */}
-                    <div>
-                        <Link href="/" className="text-2xl font-heading font-bold">
-                            <span className="text-gold-gradient">VIP</span>Cab
+                    <div className="flex flex-col">
+                        <Link href="/" className="flex items-center gap-2 group" aria-label="VIP Cab Home">
+                            <div className="flex items-center gap-1.5 font-heading">
+                                <span className="flex items-center justify-center bg-[#ff4b4b] text-[12px] font-black text-white px-2 py-0.5 rounded-sm transform -rotate-12 -translate-y-1 shadow-md group-hover:rotate-0 transition-transform duration-300">
+                                    THE
+                                </span>
+                                <div className="flex items-baseline">
+                                    <span className="text-3xl font-black text-gold-gradient drop-shadow-md">VIP</span>
+                                    <span className="text-3xl font-bold text-white ml-1">Cab</span>
+                                </div>
+                            </div>
                         </Link>
-                        <p className="mt-3 text-sm text-white/70 leading-relaxed">
-                            {siteConfig.tagline}
+                        <p className="mt-4 text-sm text-white/70 leading-relaxed pr-4">
+                            {siteConfig.tagline} We provide highly reliable, affordable, and safe outstation and local cab services across Maharashtra with a premium fleet.
                         </p>
-                        <p className="mt-4 text-sm text-white/60">
-                            {siteConfig.tripsCompleted} trips completed<br />
-                            {siteConfig.happyCustomers} happy customers
-                        </p>
-                        {/* Social */}
-                        <div className="mt-4 flex gap-3">
+                        <div className="mt-6 flex gap-3">
                             <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">f</a>
                             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">ig</a>
                             <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">tw</a>
@@ -51,13 +43,13 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-6">
                             Quick Links
                         </h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                             {quickLinks.map((link) => (
                                 <li key={link.href}>
-                                    <Link href={link.href} className="text-sm text-white/70 hover:text-accent transition-colors">
+                                    <Link href={link.href} className="text-sm text-white/70 hover:text-accent transition-colors block">
                                         {link.label}
                                     </Link>
                                 </li>
@@ -65,67 +57,85 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Popular Routes */}
+                    {/* Support & Hours */}
                     <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
-                            Popular Routes
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-6">
+                            Operating Info
                         </h3>
-                        <ul className="space-y-2">
-                            {popularRoutes.map((link) => (
-                                <li key={link.href}>
-                                    <Link href={link.href} className="text-sm text-white/70 hover:text-accent transition-colors">
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+                        <div className="space-y-4">
+                            <div className="text-sm text-white/70">
+                                <span className="block font-semibold text-white/90 mb-1">Working Hours:</span>
+                                {siteConfig.workingHours}
+                            </div>
+                            <div className="text-sm text-white/70">
+                                <span className="block font-semibold text-white/90 mb-1">Our Location:</span>
+                                {siteConfig.address}
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Contact */}
+                    {/* Contact Us */}
                     <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
-                            Contact Us
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-6">
+                            Contact Support
                         </h3>
-                        <ul className="space-y-3">
+                        <ul className="space-y-4 text-sm text-white/70">
                             <li>
-                                <a
-                                    href={getCallLink()}
-                                    className="flex items-center gap-2 text-sm text-white/70 hover:text-accent transition-colors"
-                                >
-                                    <span>📞</span> {siteConfig.phoneDisplay}
+                                <a href={getCallLink()} className="flex items-start gap-3 hover:text-accent transition-colors">
+                                    <span className="mt-0.5 text-base text-[#ff4b4b]">📞</span>
+                                    <div className="font-semibold text-white/90">{siteConfig.phoneDisplay}</div>
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href={getWhatsAppLink()}
-                                    className="flex items-center gap-2 text-sm text-white/70 hover:text-whatsapp transition-colors"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <span>💬</span> WhatsApp Us
+                                <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-accent transition-colors">
+                                    <span className="mt-0.5 text-base text-[#ff4b4b]">💬</span>
+                                    <div className="font-semibold text-white/90">WhatsApp Us</div>
                                 </a>
                             </li>
                             <li>
-                                <a
-                                    href={`mailto:${siteConfig.email}`}
-                                    className="flex items-center gap-2 text-sm text-white/70 hover:text-accent transition-colors"
-                                >
-                                    <span>✉️</span> {siteConfig.email}
+                                <a href={`mailto:${siteConfig.email}`} className="flex items-start gap-3 hover:text-accent transition-colors">
+                                    <span className="mt-0.5 text-base text-[#ff4b4b]">✉️</span>
+                                    <div>{siteConfig.email}</div>
                                 </a>
-                            </li>
-                            <li className="flex items-start gap-2 text-sm text-white/70">
-                                <span>📍</span> {siteConfig.address}
                             </li>
                         </ul>
-                        <p className="mt-4 text-xs text-white/50">
-                            Available {siteConfig.workingHours}
-                        </p>
                     </div>
                 </div>
 
-                {/* Bottom */}
-                <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
+                {/* BOTTOM ROW: Enormous list of Routes */}
+                <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4 text-center sm:text-left">
+                        Popular Cab Routes
+                    </h3>
+                    {/* Using columns-2 sm:columns-3 lg:columns-4 to handle large amounts intelligently without horizontal scroll */}
+                    <ul className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-x-6 gap-y-3">
+                        {routes.map((route) => (
+                            <li key={route.slug} className="mb-3 break-inside-avoid w-full">
+                                <Link
+                                    href={`/${route.slug}`}
+                                    className="flex items-start gap-2.5 text-[13px] text-white/60 hover:text-accent transition-colors group"
+                                >
+                                    <span className="text-[#ff4b4b] opacity-80 group-hover:opacity-100 transition-opacity shrink-0 mt-[1px] text-[14px]">
+                                        🚗
+                                    </span>
+                                    <span className="leading-snug truncate block overflow-hidden">
+                                        {route.from === 'Pune' ? `Pune to ${route.to} Cab` :
+                                            route.from === 'Mumbai' ? `Mumbai to ${route.to} Cab` :
+                                                `${route.from} to ${route.to} Cab`}
+                                    </span>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
                     <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms of Service</Link>
+                    </div>
                 </div>
             </div>
         </footer>

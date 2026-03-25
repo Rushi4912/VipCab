@@ -17,6 +17,40 @@ export interface RouteData {
     category: 'pune-mumbai' | 'airport' | 'pilgrimage' | 'outstation' | 'intercity';
 }
 
+function getRouteImage(to: string, isAirport: boolean, category: string): string {
+    const dest = to.toLowerCase();
+
+    // 1. Airport priority
+    if (isAirport) return '/routes/airport_premium.jpg';
+
+    // 2. Specific major cities
+    if (dest === 'mumbai') return '/routes/mumbai_city.jpg';
+    if (dest === 'pune') return '/routes/pune_city.jpg';
+
+    // 3. Spiritual/Pilgrimage
+    if (category === 'pilgrimage' || dest.includes('shirdi') || dest.includes('shani') || dest.includes('temple')) {
+        return '/routes/temple_spiritual.jpg';
+    }
+
+    // 4. Hill Stations
+    const hillStations = ['mahabaleshwar', 'lonavala', 'panchgani', 'matheran', 'lavasa', 'bhandardara', 'igatpuri', 'malsej'];
+    if (hillStations.some(h => dest.includes(h)) || dest.includes('hill')) {
+        return '/routes/hill_station.jpg';
+    }
+
+    // 5. Coastal/Beach
+    const beaches = ['goa', 'alibag', 'ratnagiri', 'dapoli', 'ganpatipule', 'tarkarli', 'murud'];
+    if (beaches.some(b => dest.includes(b)) || dest.includes('beach') || dest.includes('coast')) {
+        return '/routes/beach_scenic.jpg';
+    }
+
+    // 6. Generic Intercity/Mumbai Fallback
+    if (dest.includes('mumbai')) return '/routes/mumbai_city.jpg';
+    if (dest.includes('pune')) return '/routes/pune_city.jpg';
+
+    return '/routes/mumbai_city.jpg';
+}
+
 // ---------- helper ----------
 function createRoute(
     from: string,
@@ -52,6 +86,7 @@ function createRoute(
     const isOneWay = overrides.isOneWay ?? true;
     const category = overrides.category ?? 'outstation';
     const relatedRoutes = overrides.relatedRoutes ?? [];
+    const image = overrides.image ?? getRouteImage(to, isAirport, category);
 
     return {
         slug,
@@ -67,7 +102,7 @@ function createRoute(
         isAirport,
         isOneWay,
         fareNote: overrides.fareNote,
-        image: overrides.image,
+        image,
         relatedRoutes,
         category,
     };

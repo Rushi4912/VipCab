@@ -14,7 +14,7 @@ export default function FleetCard({ car }: { car: CarType }) {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {car.popular && (
-                    <span className="absolute top-3 right-3 rounded-full bg-accent px-3 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider z-10 shadow-sm">
+                    <span className="absolute top-3 right-3 rounded-full bg-[#ff3366] px-3 py-0.5 text-[10px] font-bold text-white uppercase tracking-wider z-10 shadow-sm">
                         Popular
                     </span>
                 )}
@@ -46,7 +46,7 @@ export default function FleetCard({ car }: { car: CarType }) {
                     </div>
                     <a
                         href="/contact"
-                        className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-white hover:bg-accent-dark transition-colors"
+                        className="rounded-full bg-[#ff3366] px-4 py-2 text-xs font-semibold text-white hover:bg-[#e62e5c] transition-colors shadow-sm shadow-[#ff3366]/20"
                     >
                         Book Now
                     </a>

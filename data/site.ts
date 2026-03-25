@@ -4,9 +4,9 @@ export const siteConfig = {
   tagline: 'Premium Cab Service — Pune, Mumbai & Beyond',
   description:
     'Book premium cab service for Pune to Mumbai, Mumbai to Pune, airport transfers, outstation trips & more. Clean cars, professional drivers, transparent fares.',
-  phone: '+919876543210',
-  phoneDisplay: '+91 98765 43210',
-  whatsapp: '919876543210',
+  phone: '+918669768272',
+  phoneDisplay: '+91 866 976 8272',
+  whatsapp: '918669768272',
   whatsappMessage: 'Hi, I want to book a cab. Please share details.',
   email: 'booking@vipcab.in',
   address: 'Pune, Maharashtra, India',

@@ -34,11 +34,16 @@ export default function Navbar() {
         <header className="sticky top-0 z-50 bg-primary text-white shadow-lg">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2" aria-label="VIP Cab Home">
-                    <span className="text-2xl font-bold font-heading">
-                        <span className="text-gold-gradient">VIP</span>
-                        <span className="text-white">Cab</span>
-                    </span>
+                <Link href="/" className="flex items-center gap-2 group" aria-label="VIP Cab Home">
+                    <div className="flex items-center gap-1.5 font-heading">
+                        <span className="flex items-center justify-center bg-[#ff4b4b] text-[10px] font-black text-white px-1.5 py-0.5 rounded-sm transform -rotate-12 -translate-y-1 shadow-sm group-hover:rotate-0 transition-transform duration-300">
+                            THE
+                        </span>
+                        <div className="flex items-baseline">
+                            <span className="text-2xl font-black text-gold-gradient drop-shadow-sm">VIP</span>
+                            <span className="text-2xl font-bold text-white ml-0.5">Cab</span>
+                        </div>
+                    </div>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -93,7 +98,7 @@ export default function Navbar() {
                     </a>
                     <Link
                         href="/contact"
-                        className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white hover:bg-accent-dark transition-colors"
+                        className="rounded-full bg-[#ff3366] px-5 py-2 text-sm font-semibold text-white hover:bg-[#e62e5c] transition-colors shadow-md shadow-[#ff3366]/20"
                     >
                         Book Now
                     </Link>
