@@ -6,7 +6,7 @@ export const siteConfig = {
     'Book premium cab service for Pune to Mumbai, Mumbai to Pune, airport transfers, outstation trips & more. Clean cars, professional drivers, transparent fares.',
   phone: '+919503620603',
   phoneDisplay: '+91 950 362 0603',
-  whatsapp: '918669768272',
+  whatsapp: '919503620603',
   whatsappMessage: 'Hi, I want to book a cab. Please share details.',
   email: 'thevipcab01@gmail.com',
   address: 'Shop No 2, 7th Floor, Bhama Centre, near Bhujbal Chowk, Wakad, Pune, Maharashtra 411057',
@@ -14,7 +14,7 @@ export const siteConfig = {
   state: 'Maharashtra',
   country: 'India',
   postalCode: '411057',
-  url: 'https://vipcab.in',
+  url: 'https://vipcab.com',
   social: {
     facebook: 'https://facebook.com/vipcab',
     instagram: 'https://instagram.com/vipcab',
