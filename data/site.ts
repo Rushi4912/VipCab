@@ -9,11 +9,11 @@ export const siteConfig = {
   whatsapp: '918669768272',
   whatsappMessage: 'Hi, I want to book a cab. Please share details.',
   email: 'thevipcab01@gmail.com',
-  address: 'New Sangvi, Pune, Maharashtra 411027',
+  address: 'Shop No 2, 7th Floor, Bhama Centre, near Bhujbal Chowk, Wakad, Pune, Maharashtra 411057',
   city: 'Pune',
   state: 'Maharashtra',
   country: 'India',
-  postalCode: '411027',
+  postalCode: '411057',
   url: 'https://vipcab.in',
   social: {
     facebook: 'https://facebook.com/vipcab',

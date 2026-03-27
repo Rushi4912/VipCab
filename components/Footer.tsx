@@ -19,10 +19,10 @@ export default function Footer() {
             <meta itemProp="url" content={siteConfig.url} />
             <meta itemProp="email" content={siteConfig.email} />
             <meta itemProp="telephone" content={siteConfig.phone} />
-            <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 lg:px-8">
+            <div className="mx-auto max-w-7xl px-4 pt-12 pb-8 lg:px-8">
 
                 {/* TOP ROW: Core Material (Brand, Quick Links, Working Hours, Contact) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
                     {/* Brand */}
                     <div className="flex flex-col">
                         <Link href="/" className="flex items-center gap-2 group no-underline" aria-label="VIP Cab Home">
@@ -36,15 +36,14 @@ export default function Footer() {
                                 </div>
                             </div>
                         </Link>
-                        <p className="mt-4 text-sm text-white/70 leading-relaxed pr-4">
+                        <p className="mt-3 text-sm text-white/70 leading-relaxed pr-4">
                             {siteConfig.tagline} We provide highly reliable, affordable, and safe outstation and local cab services across Maharashtra with a premium fleet.
                         </p>
-                        <div className="mt-6 flex gap-3">
+                        <div className="mt-4 flex gap-3">
                             <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">f</a>
                             <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">ig</a>
                             <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent transition-colors text-sm">tw</a>
                         </div>
-                        <MapEmbed />
                     </div>
 
                     {/* Quick Links */}
@@ -112,8 +111,13 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Map Section - Full Width */}
+                <div className="mt-8 mb-8">
+                    <MapEmbed />
+                </div>
+
                 {/* BOTTOM ROW: Enormous list of Routes */}
-                <div className="pt-10 border-t border-white/10">
+                <div className="pt-8 border-t border-white/10">
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-accent mb-4 text-center sm:text-left">
                         Popular Cab Routes
                     </h3>
@@ -140,7 +144,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/70">
+                <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/70">
                     <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved. <span className="mx-1">|</span> Developed by <a href="https://www.rushikeshpawar.space/" target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:text-accent-light transition-colors no-underline">Rushikesh</a></p>
                     <div className="flex flex-wrap justify-center gap-5">
                         <Link href="/privacy-policy" className="hover:text-white transition-colors no-underline">Privacy Policy</Link>
