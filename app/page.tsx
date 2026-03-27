@@ -17,6 +17,7 @@ import CTABanner from '@/components/CTABanner';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import InquiryForm from '@/components/InquiryForm';
 import HeroCarCarousel from '@/components/HeroCarCarousel';
+import Gallery from '@/components/Gallery';
 
 export default function Home() {
   const popularRoutes = getPopularRoutes();
@@ -149,6 +150,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ========== GALLERY ========== */}
+      <Gallery />
 
       {/* ========== WHY CHOOSE US ========== */}
       <section className="py-16 px-4 bg-gradient-to-b from-[#f0f9ff] to-white" id="why-us">
