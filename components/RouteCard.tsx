@@ -49,8 +49,7 @@ export default function RouteCard({ route }: { route: RouteData }) {
                         </svg>
                         {route.duration}
                     </span>
-                    <span className="w-px h-3 bg-white/30" />
-                    <span className="font-bold text-cyan-300">₹12/km</span>
+
                 </div>
 
                 {/* Hover arrow */}
